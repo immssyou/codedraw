@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_klife"
+            android:icon="@drawable/ic_favorite_black"
+            android:title="K-LIFE" />
+        <item
+            android:id="@+id/nav_smallGroup"
+            android:icon="@drawable/ic_wc_black"
+            android:title="소모임" />
+        <item
+            android:id="@+id/nav_discussion"
+            android:icon="@drawable/ic_group_black"
+            android:title="토론방" />
+        <item
+            android:id="@+id/nav_carPool"
+            android:icon="@drawable/ic_local_taxi_black"
+            android:title="Car Pool" />
+        <item
+            android:id="@+id/nav_deal"
+            android:icon="@drawable/ic_add_shopping_cart_black"
+            android:title="중고거래" />
+    </group>
+
+    <item android:title="공지사항">
+        <menu>
+            <item
+                android:id="@+id/nav_council"
+                android:icon="@drawable/ic_chat_black"
+                android:title="총학생회" />
+            <item
+                android:id="@+id/nav_major"
+                android:icon="@drawable/ic_school_black"
+                android:title="과별게시판" />
+        </menu>
+    </item>
+
+</menu>

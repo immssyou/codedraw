@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#009688"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".LoginActivity">
+
+    <TextView
+        android:id="@+id/title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/idLayout"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="26dp"
+        android:text="KangNam.Univ"
+        android:textSize="46dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/idLayout"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/passwordLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="#ffffff">
+
+        <EditText
+            android:id="@+id/idText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="example@kangnam.ac.kr"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="6dp"
+            android:textColor="#000000"
+            android:textColorHint="#BDBDBD"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:background="#ffffff">
+
+        <EditText
+            android:id="@+id/passwordText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="password"
+            android:inputType="textPassword"
+            android:paddingLeft="6dp"
+            android:textColor="#000000"
+            android:textColorHint="#BDBDBD"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="300dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/passwordLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
+        android:background="#E0E0E0"
+        android:text="LOGIN"
+        android:textColor="#009688"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/joinTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Not a Member? Sign up now"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/joinTextView"
+        android:layout_centerHorizontal="true"
+        android:text="Copyrightⓒ2015 계상우 임준혁 All Rights Reserved"
+        android:textStyle="bold"
+        android:textColor="#000000"/>
+</RelativeLayout>
