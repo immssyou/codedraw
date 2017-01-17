@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Pharos-WAS</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<meta http-equiv="Cache-control" content="private"/>
+		<meta name="viewport" content="width=device-width"/>
+	</head>
+	<body>
+		<div id="sdmMailBody" style="margin:0 auto;width: 770px;border: 1px solid #D1DADF;overflow-x:hidden;padding:10px;font: 12px 'Malgun Gothic', 'Nanum Gothic', gulim, Verdana, tahoma, sans-serif;color: #000000;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
+			
+			<table width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout:fixed;border-collapse:collapse;margin-bottom:5px;background-color:#FFFFFF;color:#d01241;font-size:12px;width:100%;">
+				<colgroup>
+					<col style="width:120px;"/>
+					<col style=""/>
+				</colgroup>
+				<tbody>
+					<tr>
+						<th colspan="2" style="padding:1px;line-height:18px;height:18px;border:1px solid #FFBFD1;padding-top:3px;padding-bottom:3px;font-weight:normal;background-color: #FFDFE8;letter-spacing:1px;">
+							New User Registed.
+						</th>
+					<tr>
+
+					</tr>
+						<th width="120" style="padding:1px;line-height:18px;height:18px;border:1px solid #FFBFD1;padding-top:3px;padding-bottom:3px;font-weight:normal;background-color: #FFDFE8;letter-spacing:1px;">
+							User ID
+						</th>
+						<td style="padding:1px;line-height:18px;height:18px;border:1px solid #FFBFD1;padding-left:2px;text-align:left;letter-spacing:2px;font-size:13px;">
+							$user.id
+						</td>
+					</tr>
+
+					</tr>
+						<th width="120" style="padding:1px;line-height:18px;height:18px;border:1px solid #FFBFD1;padding-top:3px;padding-bottom:3px;font-weight:normal;background-color: #FFDFE8;letter-spacing:1px;">
+							User Name
+						</th>
+						<td style="padding:1px;line-height:18px;height:18px;border:1px solid #FFBFD1;padding-left:2px;text-align:left;letter-spacing:2px;font-size:13px;">
+							$user.name
+						</td>
+					</tr>
+
+					</tr>
+						<th width="120" style="padding:1px;line-height:18px;height:18px;border:1px solid #FFBFD1;padding-top:3px;padding-bottom:3px;font-weight:normal;background-color: #FFDFE8;letter-spacing:1px;">
+							User E-mail
+						</th>
+						<td style="padding:1px;line-height:18px;height:18px;border:1px solid #FFBFD1;padding-left:2px;text-align:left;letter-spacing:2px;font-size:13px;">
+							$user.email
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="2" style="padding:1px;line-height:18px;height:18px;border:1px solid #FFBFD1;padding-left:2px;text-align:left;letter-spacing:2px;font-size:13px;">
+							<a href="http://112.220.201.114" > Pharos-WAS </a>
+						</td>
+					<tr>
+
+				</tbody>
+			</table>
+			
+			<div style="margin:0 auto;border: 1px solid #D1DADF;height:40px;overflow-x:hidden;text-align:center;overflow:hidden;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;">
+				<p style="margin:12px 0;"><strong>Pharos-WAS</strong> &copy; 2006-$dateTool.getYear() Qubicom. All rights reserved</p>
+			</div>
+			<div style="margin:0 auto;height:40px;text-align:center;overflow:hidden;">
+				<strong style="margin:12px 0;">이 메일은 발신 전용 메일입니다.</strong>
+			</div>
+		</div>
+	</body>
+</html>

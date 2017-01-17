@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       					   http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<beans profile="dev">
+
+		<bean id="dataSource" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource" destroy-method="close"
+			p:driverClassName="core.log.jdbc.driver.MysqlDriver"
+			p:url="jdbc:mysql://localhost:3306/lifepan?autoReconnect=true&amp;characterEncoding=utf-8&amp;useUnicode=true&amp;zeroDateTimeBehavior=convertToNull"
+			p:username="android"
+			p:password="12345"
+			p:maxActive="100"
+			p:validationQuery="select 1"
+			p:removeAbandoned="false"
+			p:removeAbandonedTimeout="300"
+			p:logAbandoned="false"
+			p:testOnBorrow="true"
+			p:testWhileIdle="true" />
+
+
+	</beans>
+	
+	
+	
+	
+				
+</beans>

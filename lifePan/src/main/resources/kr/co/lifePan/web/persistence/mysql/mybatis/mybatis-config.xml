@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="lazyLoadingEnabled" value="true" />
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+	</settings>
+
+	<typeAliases>
+		<typeAlias type="java.util.HashMap" alias="hmap"/>
+		<package name="kr.co.lifePan.web.domain"/>
+	</typeAliases>
+	
+	<mappers>
+		<package name="kr.co.lifePan.web.persistence.mysql.mybatis.mapper"/>
+	</mappers>
+</configuration>
+ 

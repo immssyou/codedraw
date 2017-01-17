@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kr.co.lifePan.web.persistence.mysql.mybatis.mapper.KlifeBoardMapper">
+	<insert id="insertKlifeBoard" >
+	INSERT INTO klifeboard (
+		   userNo
+		  ,content
+		  ,registDate
+		  ,uploadFileNames
+		  ,savePath
+		  ,userName
+		  ,imageURL
+		) VALUES (
+		   #{userNo} 
+		  ,#{content} 
+		  ,now() 
+		  ,#{uploadFileNames}
+		  ,#{savePath}
+		  ,#{userName}
+		  ,#{imageURL}  
+		)
+	</insert>
+	
+	<select id="getKlifeBoardList" resultType="klifeBoard">
+	SELECT boardNo, userNo, content, likeCount, registDate, modifiedDate, uploadFileNames, used, readCount, savePath, userName, imageURL
+	FROM klifeboard
+	order by boardNo desc
+	</select>
+	
+	<select id="getData" resultType="board">
+	SELECT num, username, password, title, memo
+FROM board
+	</select>
+</mapper>
