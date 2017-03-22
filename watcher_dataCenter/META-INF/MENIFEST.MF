@@ -1,0 +1,3 @@
+Manifest-Version: 1.0
+Class-Path: lib/hiveLib/commons-logging-1.0.4.jar lib/hiveLib/hadoop-core-1.0.3.jar lib/hiveLib/hive-exec-0.8.1.jar lib/hiveLib/hive-jdbc-0.8.1.jar lib/hiveLib/hive-metastore-0.8.1.jar lib/hiveLib/hive-service-0.8.1.jar lib/hiveLib/libfb303.jar lib/hiveLib/log4j-1.2.16.jar lib/hiveLib/slf4j-api-1.6.1.jar lib/hiveLib/slf4j-log4j12-1.6.1.jar lib/AnalyzerLib/shineware-ds-1.0.jar lib/AnalyzerLib/komoran-2.4-e.jar lib/AnalyzerLib/shineware-common-2.0.jar lib/sqlLib/mysql-connector-java-5.1.39-bin.jar
+Main-Class: kr.co.codedraw.main.Main

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 인터페이스 풀네임 -->
+<mapper namespace="kr.co.codedraw.mapper.WeatherMapper">
+	
+	<!-- id에는 인터페이스의 메소드명 resultType에는 값을 받아올 타입 -->	
+	<select id="readWeather" resultType="kr.co.codedraw.dto.WeatherDto">	
+		select * from weather_table
+	</select>
+	
+	<insert id="writeWeather" parameterType="kr.co.codedraw.dto.WeatherDto">
+		
+		insert into weather_table (date, temperature, humidity, regionCodeNum) values (#{weatherDto.date}, #{weatherDto.temperature}, #{weatherDto.humidity}, #{weatherDto.regionCodeNum})
+		
+	</insert>
+	
+	<!-- parameterType가 없으면 default는 String -->
+	<update id="updateAutoIncrementWeather">
+		alter table weather_table auto_increment = 1
+	</update>
+	
+	<delete id="deleteWeather">
+		delete from weather_table
+	</delete>
+</mapper>
