@@ -5,7 +5,7 @@ public class Main {
 	public static void main(String[] args) {
 		MenuAction action = new  MenuAction();
 		Scanner sc = new Scanner(System.in);
-		do {
+		do {	//de
 			System.out.println("\n======== 회원 전용 방명록 ========");
 			System.out.println("1. 글쓰기(회원전용)");
 			System.out.println("2. 글보기");
