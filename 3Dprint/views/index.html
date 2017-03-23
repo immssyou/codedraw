@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="/js/html2canvas.js"></script>
+<script src="/js/canvas2image.js"></script>
+<script src="/js/base64.js"></script>
+<script src="/js/jquery.plugin.html2canvas.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://openapi.map.naver.com/openapi/v3/maps.js?clientId=fHrcWVHy6To80PZOOxEI&submodules=geocoder"></script>
+<title>인스턴스 촉지도</title>
+</head>
+<body>
+	<!-- 
+	<form method="post" enctype="multipart/form-data" action="/file-upload">
+		<input type="file" name="img" accept="image/*"> <input
+			type="submit">
+	</form>
+	 -->
+	<img src="/images/banner.png" id="banner">
+	<div id="wrapper">
+		<div id="map">
+		</div>
+		<div id="sidebar">
+			<div class="form-group has-success has-feedback">
+      			<input type="text" class="form-control" id="txtPlace" onfocusout="checkText()" onkeypress="keyHandle(event)" placeholder="지역을 입력하세요.">
+      			<span class="glyphicon form-control-feedback" id="icon"></span>
+    		</div>
+			<span><button class="btn btn-success" id="btnPNG" >PNG Download</button></span>
+			<form method="post" enctype="multipart/form-data" action="/file-upload">
+			<div class="filebox">
+				<label for="chooseFile">Choose File</label>
+				<input class="btn-info" id="chooseFile" type="file" name="img" accept="image/*">
+			</div>
+				<input class="btn btn-info"  id="btnSTL" type="submit" value ="STL Download">
+			</form>
+			<a></a>
+		</div>
+	</div>
+	<script>
+		var $map = $('#map'),
+			$btnPNG = $('#btnPNG'),
+			$txtPlace = $('#txtPlace'),
+			$glyphicon = $('#icon'),
+			$data = $('#data'),
+			$saveToServer = $('#saveToServer');
+		
+		var fileName;
+		
+		var mapOptions,
+			map;
+		
+		$(document).ready(function(){
+			
+		});
+		
+		$btnPNG.click(function(){
+			fileName = new Date().getTime().toString().substring(0, 10);
+			html2canvas($map,{
+				logging: true,
+				useCORS: true,
+				allowTaint: false,
+				onrendered: function(canvas){
+					//var width = $map.width();
+					//var height = $map. height();
+					var url = canvas.toDataURL();
+					//Canvas2Image.saveAsPNG(canvas, width, height, 'png');
+					$("<a>", {
+                    href: url,
+                    download: fileName
+                  })
+                  .on("click", function() {$(this).remove()})
+                  .appendTo("body")[0].click();
+				}
+			});
+		});
+		
+		function checkText(){
+			var getTxt = $txtPlace.val();
+			if(getTxt != "")	$glyphicon.addClass('glyphicon-ok');
+			else $glyphicon.removeClass('glyphicon-ok');
+		}
+		
+		function keyHandle(e){
+			// enter key 입력
+			if(e.keyCode == 13){		
+				searchAddressToCoordinate($txtPlace.val());
+				$glyphicon.addClass('glyphicon-ok');
+			} else {
+				$glyphicon.removeClass('glyphicon-ok');
+			}
+		}
+		
+		function searchAddressToCoordinate(address){
+			naver.maps.Service.geocode({
+		        address: address
+		    }, function(status, response) {
+		        if (status === naver.maps.Service.Status.ERROR) {
+		            return alert('Something Wrong!');
+		        }
+
+		        var item = response.result.items[0],
+		        	point = item.point,
+		            latitude = point.y,
+		            longitude = point.x;
+		            
+		        mapOptions = {
+						center : new naver.maps.LatLng(latitude, longitude),
+						zoom : 10,
+						mapTypeControl: true
+					};
+				map = new naver.maps.Map( 'map', mapOptions);
+		    });
+		}
+	</script>
+</body>
+</html>

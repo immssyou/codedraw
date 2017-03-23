@@ -1,0 +1,62 @@
+body{
+	padding: 0px;
+	margin: 0px;
+}
+
+#map {
+	width: 80%;
+	height: 960px;
+	float: left;
+}
+
+#banner{
+	width: 100%;
+	height: 100%;
+}
+
+#wrapper{
+	width: 100%;
+	height: 960px;
+	position: absolute;
+}
+
+#sidebar{
+	width: 20%;
+	height: 960px;
+	float: left;
+	background-color: #C9DF8A;
+	padding: 30px;
+}
+
+#btnSTL{
+	margin-top: 15px;
+}
+
+.filebox{
+	margin-top: 15px;
+}
+
+.filebox label{
+	display: inline-block;
+	padding: .5em .75em;
+	color: #999;
+	font-size: inherit;
+	line-height: normal;
+	vertical-align: middle;
+	background-color: #fdfdfd;
+	cursor: pointer;
+	border: 1px solid #ebebeb;
+	boreder-bottom-color: #e2e2e2;
+	border-radius: .25em;
+}
+
+.filebox input[type="file"] {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip:rec(0,0,0,0);
+	border: 0;
+}
