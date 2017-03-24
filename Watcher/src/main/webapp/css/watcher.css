@@ -1,0 +1,292 @@
+/*
+    @project name: watcher
+    @team: codedraw
+    @developers: im jun hyeok
+    @date: 2016. 9. 9
+    @last update: 2016. 9.21
+*/
+
+/*ÃÊ±âÈ­*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+/*Google map*/
+#google-map {
+    height: 695px;
+}
+
+#keyword-content-wrapper {
+    background: #ecf0f1;
+    /*background: #1F253D;*/
+    height: 100%;
+}
+
+#simulation-content-wrapper {
+    background: #50597B;
+    height: 100%;
+}
+
+.control-page {
+    height:250px;
+}
+#content-wrapper {
+    padding-top: 15px;
+    background: #50597B;
+    /*background: #1F253D;*/
+    height: auto;
+}
+
+/*Panel*/
+.panel {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    font-size: 90%;
+}
+
+.panel-weather {
+    background-color: #E64C65;
+    height: 130px;
+}
+
+.panel-header {
+    padding: 10px;
+    margin: 0;
+    border-radius: 4px 4px 0 0;
+    color: #ffffff;
+}
+
+.panel-header-weather {
+    background-color: #CC324B;
+}
+
+.panel-body {
+    color: #ffffff;
+}
+
+.panel-chart {
+    margin-top: 15px;
+    /*background-color: #576393;*/
+    background-color: #394264;
+    height: auto;   
+}
+
+.panel-heaer-chart {
+    /*background-color: #576393;*/
+    background-color: #394264;
+}
+
+.panel-table {
+    margin-top: 15px;
+    /*background-color: #576393;*/
+    background-color: #ffffff;
+}
+
+
+/*chart*/
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#lineChart {
+    margin-top: 15px;
+    padding: 0;
+    max-width: 100%;
+}
+
+/*keyword page*/
+/*navbar*/
+.keword-nav {
+    width: 100%;
+    padding: 10px;
+    height: 70px;
+    background-color: #333336;
+    box-shadow: 0px 3px 3px #e6e6ea;
+}
+
+#keword-navbar li a{
+    color: #ffffff;
+}
+
+#keword-navbar li a:hover {
+    background: #333336;
+    color: #FD606F;
+}
+
+#keword-navbar li a:after {
+    background: #333336;
+    color: #FD606F;
+}
+
+#keword-navbar li a:before {
+    background: #333336;
+    color: #ffffff;
+}
+
+#keword-info {
+    height: 60px;
+    background: #fd606f;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-top: 15px;
+    line-height: 1.6em;
+    box-shadow: 0px 3px 3px #e6e6ea;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-decoration: none;
+    color: #7a7a83;
+}
+
+/*content*/
+section {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #7a7a83;
+}
+
+.title.keword {
+    margin-bottom: 0;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.title {
+    padding: 20px;
+    margin-bottom: 6px;
+    border: 1px solid #e3e3e8;
+    border-radius: 4px;
+    background-color: #717177;
+    color: white;
+    font-size: 13px;
+    letter-spacing: -1px;
+}
+
+.col-md-6 > img {
+    border: 4px;
+    width: 50px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.alignLeft {
+    text-align: left !important;
+}
+
+.box.keword {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.box {
+    border: 1px solid #e3e3e8;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.box {
+    padding: 10px 10px 0 10px;
+}
+
+ol li:first-child {
+    margin-top: 0;
+}
+
+ol li {
+    display: flex;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border-bottom: 1px solid #ededf7;
+    align-items: center;
+}
+
+    ol li div.col1 {
+        flex: 2;
+    }
+
+    ol li:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+#kewordRank ol li div span {
+    display: block;
+}
+
+#kewordRank ol {
+    list-style: none;
+}
+
+ul {
+    display: block;
+    list-style-type: none;
+    -webkit-padding-start: 40px;
+}
+
+.num {
+    display: block;
+    float: left;
+    min-width: 13px;
+    height: 12px;
+    margin-right: 9px;
+    border: 1px solid #e0e0e0;
+    color: #666;
+    line-height: 10px;
+    text-align: center;
+}
+
+em {
+    font-style: normal;
+    cursor: pointer;
+    font-family: tahoma,sans-serif;
+    font-size: 9px;
+}
+
+/*wordcloud*/
+.chart-cloud {
+    height:600px;
+    border: 1px solid #e3e3e8;
+    border-radius: 4px;
+    background-color: white;
+}
+
+/*simulation page*/
+.container-simul-options {
+    margin-top: 15px;
+}
+
+/*slider*/
+.section1 {
+    padding-top: 35px;
+}
+
+.slider-label {
+    color: #ffffff;
+}
+
+.section2 {
+    margin-top: 10px;
+}
+#devInfo-wrapper {
+    background: #ecf0f1;
+    height: 100%;
+}

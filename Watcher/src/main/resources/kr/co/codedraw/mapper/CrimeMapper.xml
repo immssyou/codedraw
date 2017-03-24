@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 인터페이스 풀네임 -->
+<mapper namespace="kr.co.codedraw.mapper.CrimeMapper">
+	
+	<!-- id에는 인터페이스의 메소드명 resultType에는 값을 받아올 타입 -->	
+	<select id="readCrimeRate" resultType="kr.co.codedraw.dto.CrimeDto">	
+		select * from crimeRate_table
+	</select>
+	
+	<!-- crimeCountDto.regionCodeNum 이렇게 . 을 사용해서 하려면 
+	public List<CrimeDto> crimeCountList(@Param("crimeCountDto") CrimeCountDto crimeCountDto);
+	  이렇게 @Param 어노테이션을 사용하도록 해야함 -->
+	<select id="crimeCountList" resultType="kr.co.codedraw.dto.CrimeDto" parameterType="kr.co.codedraw.dto.CrimeCountDto">
+		select * from crimeCount_table where (#{crimeCountDto.regionCodeNum} = regionCodeNum and  #{crimeCountDto.presentDate} = date ) order by crimeCodeNum 
+	</select>
+	
+	<select id="crimePIchart" resultType="kr.co.codedraw.dto.CrimeMonthRateDto" parameterType="kr.co.codedraw.dto.CrimeCountDto">
+		select * from monthRate_table where (#{crimeCountDto.regionCodeNum} = regionCodeNum and #{crimeCountDto.presentDate} = date ) 
+	</select>
+	
+	<insert id="writeCrimeRate" parameterType="kr.co.codedraw.dto.CrimeDto">
+		<!-- insert into crimeRate_table (date, crimeRate, regionCodeNum, crimeCodeNum) values (#{crimeDto.date}, #{crimeDto.crimeRate}, #{crimeDto.regionCodeNum}, #{crimeDto.crimeCodeNum}) -->
+		insert into crimeRate_table (date, crimeRate, regionCodeNum, crimeCodeNum, crimeRate_table.wId) values (#{crimeDto.date}, #{crimeDto.crimeRate}, #{crimeDto.regionCodeNum}, #{crimeDto.crimeCodeNum}, (select weather_table.wId from weather_table where #{crimeDto.date}=weather_table.date and #{crimeDto.regionCodeNum}=weather_table.regionCodeNum))
+	
+	</insert>
+	
+	<insert id="writeHistoryCrimeRate" parameterType="kr.co.codedraw.dto.CrimeDto">
+		<!-- insert into history_table (date, crimeRate, regionCodeNum, crimeCodeNum) values (#{crimeDto.date}, #{crimeDto.crimeRate}, #{crimeDto.regionCodeNum}, #{crimeDto.crimeCodeNum}) -->
+		insert into history_table  (date, crimeRate, regionCodeNum, crimeCodeNum, history_table.wId) values (#{crimeDto.date}, #{crimeDto.crimeRate}, #{crimeDto.regionCodeNum}, #{crimeDto.crimeCodeNum}, (select weather_table.wId from weather_table where #{crimeDto.date}=weather_table.date and #{crimeDto.regionCodeNum}=weather_table.regionCodeNum))
+		</insert>
+	
+	<insert id="writeCrimeCount" parameterType="kr.co.codedraw.dto.CrimeDto">
+		<!-- insert into crimeCount_table (date, regionCodeNum, crimeCodeNum, crimeCount) values (#{crimeDto.date}, #{crimeDto.regionCodeNum}, #{crimeDto.crimeCodeNum}, #{crimeDto.crimeCount}) -->
+		insert into crimeCount_table (date, crimeCount, regionCodeNum, crimeCodeNum, crimeCount_table.wId) values (#{crimeDto.date}, #{crimeDto.crimeCount}, #{crimeDto.regionCodeNum}, #{crimeDto.crimeCodeNum}, (select weather_table.wId from weather_table where #{crimeDto.date}=weather_table.date and #{crimeDto.regionCodeNum}=weather_table.regionCodeNum))
+	</insert>
+	
+	<!-- parameterType가 없으면 default는 String -->
+	<update id="updateAutoIncrementCrimeRate">
+		alter table crimeRate_table auto_increment = 1
+	</update>
+	
+	<delete id="deleteCrimeRate">	
+		delete from crimeRate_table
+	</delete>
+	
+	<update id="updateAutoIncrementCrimeCount">
+		alter table crimeCount_table auto_increment = 1
+	</update>
+	
+	<delete id="deleteCrimeCount">
+		delete from crimeCount_table
+	</delete>
+	
+	<insert id="writeMonthRate" parameterType="kr.co.codedraw.dto.CrimeDto">
+		insert into monthRate_table (date, regionCodeNum, monthRate) values (#{crimeDto.date}, #{crimeDto.regionCodeNum}, #{crimeDto.crimeRate})
+	</insert>
+	
+	
+</mapper>

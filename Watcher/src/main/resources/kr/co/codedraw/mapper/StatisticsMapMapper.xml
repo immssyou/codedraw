@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 인터페이스 풀네임 -->
+<mapper namespace="kr.co.codedraw.mapper.StatisticsMapMapper">
+	
+
+	<select id="getCrimeRateofArea" resultType="kr.co.codedraw.dto.CrimeViewDto" parameterType="String">
+	SELECT wId, cDate, temperature, humidity, cId, ROUND(AVG(crimeRate),2) as crimeRate, SUM(crimeCount) as crimeCount, crimeCodeNum, regionCode, regionName
+	FROM crime_view
+	WHERE cDate = #{cDate}  
+	GROUP BY cDate, regionCode
+	ORDER BY rid
+	</select>
+	
+	<insert id="insertStatisticsMapLog" parameterType="kr.co.codedraw.dto.StatisticsMapLog">
+	INSERT INTO statisticsMapLog (
+		   filePath
+		  ,fileName
+		  ,createDate
+		) VALUES (
+		  #{filePath}  
+		  ,#{fileName}
+		  ,now()
+		)
+	</insert> 
+	
+	<select id="loadAvgCrimeRateofAreaAllMonth2015" resultType="kr.co.codedraw.dto.CrimeViewDto">
+	SELECT wId,cDate, temperature, humidity, cId, ROUND(AVG(crimeRate),2) as crimeRate, SUM(crimeCount) as crimeCount, crimeCodeNum, regionCode, regionName 
+	FROM crime_view
+  	WHERE substr(cDate,1,4) = '2015'
+  	GROUP BY cDate, regionCode
+	ORDER BY rid, cDate, crimeCodeNum
+	</select>
+	
+	
+	<select id="load5CrimeRateofArea" resultType="kr.co.codedraw.dto.CrimeViewDto" parameterType="String">
+	  SELECT wId, cDate, temperature, humidity, cId, crimeRate as crimeRate, crimeCount, crimeCodeNum, regionCode, regionName
+	FROM crime_view
+	WHERE cDate = #{cDate} 
+	ORDER BY crimeCodeNum
+	</select>
+	
+	<select id="load5CrimeRateofAreaForRegionCode" resultType="kr.co.codedraw.dto.CrimeViewDto" parameterType="kr.co.codedraw.dto.CrimeViewDto">
+	  SELECT wId, cDate, temperature, humidity, cId, crimeRate as crimeRate, crimeCount, crimeCodeNum, regionCode, regionName
+	FROM crime_view
+	WHERE cDate = #{cDate} AND regionCode = #{regionCode}
+	ORDER BY crimeCodeNum
+	</select>
+	
+	<select id="loadAvgCrimeRateofAreaForRegionCode" resultType="kr.co.codedraw.dto.CrimeViewDto" parameterType="kr.co.codedraw.dto.CrimeViewDto">
+	SELECT wId, cDate, temperature, humidity, cId, ROUND(AVG(crimeRate),2) as crimeRate, SUM(crimeCount) as crimeCount, crimeCodeNum, regionCode, regionName
+	FROM crime_view
+	WHERE cDate = #{cDate} AND regionCode = #{regionCode}
+	GROUP BY cDate, regionCode
+	ORDER BY rid
+	</select>
+	
+	<select id="loadSumCrimeCountOfArea2014"  resultType="kr.co.codedraw.dto.CrimeViewDto">
+	SELECT wId, cDate, temperature, humidity, cId, ROUND(AVG(crimeRate),2) as crimeRate, SUM(crimeCount) as crimeCount, crimeCodeNum, regionCode, regionName
+	FROM crime_view
+  	WHERE substr(cDate,1,4) = '2014'
+	GROUP BY regionCode
+	ORDER BY rid
+	</select>
+	
+	<select id="loadSumCrimeCountOfArea2015"  resultType="kr.co.codedraw.dto.CrimeViewDto">
+	SELECT wId, cDate, temperature, humidity, cId, ROUND(AVG(crimeRate),2) as crimeRate, SUM(crimeCount) as crimeCount, crimeCodeNum, regionCode, regionName
+	FROM crime_view
+  	WHERE substr(cDate,1,4) = '2015'
+	GROUP BY regionCode
+	ORDER BY rid
+	</select>
+	
+	
+</mapper>

@@ -1,0 +1,153 @@
+/*
+    @project name: watcher
+    @team: codedraw
+    @developers: im jun hyeok
+    @date: 2016. 9. 9
+    @last update: 2016. 9.21
+*/
+
+/*ÃÊ±âÈ­*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+/*Google map*/
+#google-map {
+    height: 665px;
+}
+
+#keyword-content-wrapper {
+    background: #ecf0f1;
+    /*background: #1F253D;*/
+    height: 100%;
+}
+
+#simulation-content-wrapper {
+    background: #50597B;
+    /*background: #1F253D;*/
+    height: 100%;
+}
+#keword-info {
+    height: 60px;
+    background: #fd606f;
+    color: #ffffff;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-top: 15px;
+    line-height: 1.6em;
+    box-shadow: 0px 1px 1px #fd606f;
+}
+
+.control-page {
+    height:250px;
+}
+#content-wrapper {
+    padding-top: 15px;
+    background: #50597B;
+    /*background: #1F253D;*/
+    height: auto;
+}
+
+/*chart*/
+canvas {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+#lineChart {
+    margin-top: 15px;
+    padding: 0;
+    max-width: 100%;
+}
+
+/*simulation page*/
+.container-simul-options {
+    margin-top: 15px;
+}
+
+
+
+   #statisticsMaplegend {
+        background: #FFF;
+        padding: 10px;
+        margin: 5px;
+        font-family: Arial, sans-serif;
+      }
+
+      .statisticsMap {
+        border: 1px solid;
+        height: 12px;
+        width: 12px;
+        margin-right: 3px;
+        float: left;
+      }
+
+      .legend1 {
+        background: #3C78F0;
+      }
+      
+      .legend2 {
+        background: #516AD7;
+      }   
+        
+      .legend3 {
+        background: #6E58B6;
+      }
+      
+      .legend4 {
+        background: #844B9E;
+      }   
+         
+      .legend5 {
+        background: #A1397D;
+      }
+      
+      .legend6 {
+        background: #A83575;
+      }
+      
+      .legend7 {
+        background: #B62C65;
+      }
+      
+      .legend8 {
+        background: #C52355;
+      }
+      
+      .legend9 {
+        background: #DA163C;
+      }
+      
+      .legend10 {
+        background: #F7041C;
+      }
+      
+      #infoContent{ 
+      width:140px;
+      margin:0 0 7px 7px;
+	  height:80px;
+      }
+       #infoContent > p{
+       	font-size : 1.5em;
+       	font-weight : bold;
+       }
+       
+.progress-circle {
+	background: rgba(0, 0, 0, 0.15) url(/img/bigWaiting.gif) 50% 50% no-repeat;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 999999;
+	opacity: .9;
+	filter: Alpha(Opacity = 90); 
+}

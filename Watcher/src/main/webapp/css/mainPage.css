@@ -1,0 +1,66 @@
+
+   #statisticsMaplegend {
+        background: #FFF;
+        padding: 10px;
+        margin: 5px;
+        font-family: Arial, sans-serif;
+      }
+
+      .statisticsMap {
+        border: 1px solid;
+        height: 12px;
+        width: 12px;
+        margin-right: 3px;
+        float: left;
+      }
+
+      .legend1 {
+        background: #3C78F0;
+      }
+      
+      .legend2 {
+        background: #516AD7;
+      }   
+        
+      .legend3 {
+        background: #6E58B6;
+      }
+      
+      .legend4 {
+        background: #844B9E;
+      }   
+         
+      .legend5 {
+        background: #A1397D;
+      }
+      
+      .legend6 {
+        background: #A83575;
+      }
+      
+      .legend7 {
+        background: #B62C65;
+      }
+      
+      .legend8 {
+        background: #C52355;
+      }
+      
+      .legend9 {
+        background: #DA163C;
+      }
+      
+      .legend10 {
+        background: #F7041C;
+      }
+      
+      #infoContent{ 
+      width:140px;
+      margin:0 0 7px 7px;
+	  height:80px;
+      }
+       #infoContent > p{
+       	font-size : 1.5em;
+       	font-weight : bold;
+       }
+       

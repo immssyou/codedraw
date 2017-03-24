@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 인터페이스 풀네임 -->
+<mapper namespace="kr.co.codedraw.mapper.WordMapper">
+	
+	<!-- id에는 인터페이스의 메소드명 resultType에는 값을 받아올 타입 -->	
+	<select id = "listDao" parameterType = "kr.co.codedraw.dto.WordDto" resultType = "kr.co.codedraw.dto.WordDto">
+		SELECT pId, countryCode, word, frequency, `date`
+		FROM word_table	
+		WHERE `date` = #{date} AND countryCode = #{countryCode}
+	</select>
+	
+	<select id="keyWordList" parameterType = "String" resultType = "kr.co.codedraw.dto.RealwordDto">
+     SELECT rId, countryCode, word, frequency, `date`
+	 FROM realword_table
+	 ORDER BY countryCode
+<!-- 	WHERE 'date' = #{presentDate} -->
+   </select>
+   
+</mapper>
