@@ -10,7 +10,7 @@
 	<description>SdmAnalysisNew</description>
 
 	<properties>
-		<spring.maven.artifact.version>3.2.4.RELEASE</spring.maven.artifact.version>
+		<spring.maven.artifact.version>5.2.0.RELEASE</spring.maven.artifact.version>
 		<spring.security.maven.artifact.version>3.1.4.RELEASE</spring.security.maven.artifact.version>
 	</properties>
 
